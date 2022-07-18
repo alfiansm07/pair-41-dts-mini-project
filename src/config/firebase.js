@@ -61,4 +61,4 @@ const signInReq = async (email, password) => {
   }
 };
 
-export { auth, signUpreq, signOutReq };
+export { auth, signUpreq, signOutReq, signInReq };
