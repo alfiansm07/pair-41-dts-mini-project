@@ -20,7 +20,7 @@ export default function Register() {
   console.log("ini error auth", error);
   useEffect(() => {
     if (user) {
-      // navigate("/");
+      navigate("/");
     }
   }, [user, navigate]);
 

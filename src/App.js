@@ -1,14 +1,12 @@
-import "./App.css";
-import theme from "./utils/theme";
-import { CssBaseline, ThemeProvider, Typography } from "@mui/material";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-import Register from "./containers/Register";
+import Layout from "./components/Layout";
+import Home from "./containers/Home";
 function App() {
   return (
-    <Typography variant="body1" >
-      home page
-    </Typography>
+    <>
+   <Layout>
+    <Home/>
+   </Layout>
+    </>
   );
 }
 
