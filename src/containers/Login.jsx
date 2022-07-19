@@ -16,6 +16,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [errorHandling, setErrorHandling] = useState(false);
   const handleSubmit = (event) => {
+    event.preventDefault();
     signInReq(email, password);
   };
   useEffect(() => {
@@ -76,58 +77,65 @@ export default function Login() {
               px: 10,
             }}
           >
-            <Typography
-              variant="h5"
-              color="text.primary"
-              sx={{ margin: "25px" }}
-            >
-              Halaman Login
-            </Typography>
-            <TextField
-              fullWidth
-              variant="filled"
-              label="EMAIL"
-              type="email"
-              color="secondary"
-              sx={{
-                border: "1px solid #FFFFFF",
-                borderRadius: "4px",
-              }}
-              value={email}
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-            />
-            <TextField
-              fullWidth
-              variant="filled"
-              label="PASSWORD"
-              type="password"
-              color="secondary"
-              sx={{
-                mt: 2,
-                border: "1px solid #FFFFFF",
-                borderRadius: "4px",
-                "@::placeholder": { color: "text.primary" },
-              }}
-              value={password}
-              onChange={(event) => {
-                setPassword(event.target.value);
-              }}
-            />
+            <Box component="form" onSubmit={handleSubmit} noValidate>
+              <Typography
+                variant="h5"
+                color="text.primary"
+                align="center"
+                sx={{ margin: "25px" }}
+              >
+                Halaman Login
+              </Typography>
+              <TextField
+                autoComplete="email"
+                required
+                fullWidth
+                variant="filled"
+                label="EMAIL"
+                type="email"
+                color="secondary"
+                sx={{
+                  border: "1px solid #FFFFFF",
+                  borderRadius: "4px",
+                }}
+                value={email}
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
+              />
+              <TextField
+                required
+                fullWidth
+                variant="filled"
+                label="PASSWORD"
+                type="password"
+                color="secondary"
+                autoComplete="current-password"
+                sx={{
+                  mt: 2,
+                  border: "1px solid #FFFFFF",
+                  borderRadius: "4px",
+                  "@::placeholder": { color: "text.primary" },
+                }}
+                value={password}
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                }}
+              />
 
-            <Button
-              fullWidth
-              variant="contained"
-              size="large"
-              sx={{
-                mt: 4,
-                height: "56px",
-              }}
-              onClick={handleSubmit}
-            >
-              Login
-            </Button>
+              <Button
+                fullWidth
+                type="submit"
+                variant="contained"
+                size="large"
+                sx={{
+                  mt: 4,
+                  height: "56px",
+                }}
+              >
+                Login
+              </Button>
+            </Box>
           </Box>
         </Grid>
       </Grid>

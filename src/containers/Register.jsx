@@ -15,6 +15,7 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = (event) => {
+    event.preventDefault();
     signUpreq(email, password);
   };
   console.log("ini error auth", error);
@@ -83,51 +84,53 @@ export default function Register() {
             >
               Halaman register
             </Typography>
-            <TextField
-              fullWidth
-              variant="filled"
-              label="EMAIL"
-              type="email"
-              color="secondary"
-              sx={{
-                border: "1px solid #FFFFFF",
-                borderRadius: "4px",
-              }}
-              value={email}
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-            />
-            <TextField
-              fullWidth
-              variant="filled"
-              label="PASSWORD"
-              type="password"
-              color="secondary"
-              sx={{
-                mt: 2,
-                border: "1px solid #FFFFFF",
-                borderRadius: "4px",
-                "@::placeholder": { color: "text.primary" },
-              }}
-              value={password}
-              onChange={(event) => {
-                setPassword(event.target.value);
-              }}
-            />
+            <Box component="form" onSubmit={handleSubmit} noValidate>
+              <TextField
+                fullWidth
+                variant="filled"
+                label="EMAIL"
+                type="email"
+                color="secondary"
+                sx={{
+                  border: "1px solid #FFFFFF",
+                  borderRadius: "4px",
+                }}
+                value={email}
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
+              />
+              <TextField
+                fullWidth
+                variant="filled"
+                label="PASSWORD"
+                type="password"
+                color="secondary"
+                sx={{
+                  mt: 2,
+                  border: "1px solid #FFFFFF",
+                  borderRadius: "4px",
+                  "@::placeholder": { color: "text.primary" },
+                }}
+                value={password}
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                }}
+              />
 
-            <Button
-              fullWidth
-              variant="contained"
-              size="large"
-              sx={{
-                mt: 4,
-                height: "56px",
-              }}
-              onClick={handleSubmit}
-            >
-              Register
-            </Button>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                size="large"
+                sx={{
+                  mt: 4,
+                  height: "56px",
+                }}
+              >
+                Register
+              </Button>
+            </Box>
           </Box>
         </Grid>
       </Grid>
