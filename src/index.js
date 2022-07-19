@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import Register from "./containers/Register";
 import MovieDetailPage from "./containers/MovieDetailPage";
 import Login from "./containers/Login";
+import ProtectedComponent from "./components/ProtectedComponent";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,7 +17,11 @@ root.render(
       <CssBaseline />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="/" element={
+          <ProtectedComponent>
+            <App />
+          </ProtectedComponent>
+          } />
           <Route path="register" element={<Register />} />
           <Route path="moviedetailpage" element={<MovieDetailPage />} />
           <Route path="login" element={<Login />} />

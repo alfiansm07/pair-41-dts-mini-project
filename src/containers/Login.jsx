@@ -7,19 +7,20 @@ import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import { auth, signUpreq } from "../config/firebase";
+import { auth, signInReq } from "../config/firebase";
 
 export default function Login() {
   const navigate = useNavigate();
   const [user, isLoading, error] = useAuthState(auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorHandling, setErrorHandling] = useState(false);
   const handleSubmit = (event) => {
-    signUpreq(email, password);
+    signInReq(email, password);
   };
   useEffect(() => {
     if (user) {
-      // navigate("/");
+      navigate("/");
     }
   }, [user, navigate]);
 

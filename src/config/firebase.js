@@ -1,4 +1,5 @@
 // Import the functions you need from the SDKs you need
+import { Alert } from "@mui/material";
 import { initializeApp } from "firebase/app";
 import {
   createUserWithEmailAndPassword,
@@ -33,6 +34,9 @@ const signUpreq = async (email, password) => {
     console.log("sukses REGISTER ", userCredential.user);
   } catch (err) {
     console.log("error messagesss", err.code, err.message);
+    <Alert variant="filled" severity="warning">
+        This is a warning alert — check it out!
+      </Alert>
   }
 };
 
@@ -52,13 +56,17 @@ const signInReq = async (email, password) => {
       email,
       password
     );
+    alert("oke berhasil")
+    
+    
 
     console.log("User yang berhasil login adalah", userCredential.user);
   } catch (err) {
     console.log(err);
     console.log("error code auth", err.code);
     console.log("error message auth", err.message);
+    alert("LOGIN GAGAL")
   }
 };
 
-export { auth, signUpreq, signOutReq };
+export { auth, signUpreq, signOutReq ,signInReq};

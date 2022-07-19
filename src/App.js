@@ -6,8 +6,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Register from "./containers/Register";
 function App() {
   return (
-    <Typography variant="body1" color="initial">
-      home page{" "}
+    <Typography variant="body1" >
+      home page
     </Typography>
   );
 }
