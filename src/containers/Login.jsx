@@ -46,7 +46,7 @@ export default function Login() {
       <Grid
         container
         sx={{
-          background: `url(/images/Login.png)`,
+          background: `url(${process.env.PUBLIC_URL}/images/loginImg.png)`,
           minHeight: "100vh",
           bgcolor: "black",
           backgroundRepeat: "no-repeat",
