@@ -28,10 +28,8 @@ const Logout = () => {
                 navigate("/login");
               }}
               color="primary"
-              to="/"
               size="large"
               variant="contained"
-              component={RouterLink}
             >
               Go to Home
             </Button>

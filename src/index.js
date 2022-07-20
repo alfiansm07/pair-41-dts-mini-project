@@ -31,11 +31,11 @@ root.render(
           <Route
             path="/movie/:movieId"
             element={
-            
+              <ProtectedComponent>
                 <Layout>
                   <MovieDetailPage />
                 </Layout>
-            
+                </ProtectedComponent>
             }
           />
         </Routes>
