@@ -35,7 +35,7 @@ root.render(
                 <Layout>
                   <MovieDetailPage />
                 </Layout>
-                </ProtectedComponent>
+              </ProtectedComponent>
             }
           />
         </Routes>

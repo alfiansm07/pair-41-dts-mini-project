@@ -1,4 +1,4 @@
-import { CircularProgress } from "@mui/material";
+import { CircularProgress, Link } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
@@ -97,6 +97,7 @@ export default function Login() {
                 sx={{
                   border: "1px solid #FFFFFF",
                   borderRadius: "4px",
+                  "& label": { color: "#ffff" },
                 }}
                 value={email}
                 onChange={(event) => {
@@ -115,7 +116,7 @@ export default function Login() {
                   mt: 2,
                   border: "1px solid #FFFFFF",
                   borderRadius: "4px",
-                  "@::placeholder": { color: "text.primary" },
+                  "& label": { color: "#ffff" },
                 }}
                 value={password}
                 onChange={(event) => {
@@ -135,6 +136,24 @@ export default function Login() {
               >
                 Login
               </Button>
+              <Grid
+                container
+                direction="column"
+                justifyContent="center"
+                alignItems="flex-end"
+              >
+                <Link
+                  sx={{ my: "5px" }}
+                  color="text.primary"
+                  component="button"
+                  variant="body1"
+                  onClick={() => {
+                    navigate("/register");
+                  }}
+                >
+                  Registrasi
+                </Link>
+              </Grid>
             </Box>
           </Box>
         </Grid>
