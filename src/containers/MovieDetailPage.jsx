@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
-import Client from "../apis/Client";
-import { useNavigate, useParams } from "react-router-dom";
-import Typography from "@mui/material/Typography";
 import { Box, Button, Card, CardMedia, Grid, Stack } from "@mui/material";
-import { baseUrlForMovie } from "../config/firebase";
-import Loading from "../components/Loading";
+import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import Client from "../apis/Client";
+import Layout from "../components/Layout";
+import Loading from "../components/Loading";
+import { baseUrlForMovie } from "../config/firebase";
 const MovieDetailPage = () => {
   const navigate = useNavigate();
   const [movie, setMovie] = useState();
@@ -29,7 +30,7 @@ const MovieDetailPage = () => {
   }, [movieId, navigate]);
 
   return (
-    <>
+    <Layout>
       {isLoading ? (
         <Loading />
       ) : (
@@ -142,7 +143,7 @@ const MovieDetailPage = () => {
           </Container>
         </Box>
       )}
-    </>
+    </Layout>
   );
 };
 

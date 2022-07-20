@@ -18,11 +18,7 @@ const Home = () => {
         >
           Button ke Detail Page
         </Button>
-        <Button
-          variant="text"
-          color="primary"
-          onClick={() => HandleClick(453987)}
-        >
+        <Button variant="text" color="primary" onClick={() => HandleClick(1)}>
           Button Jika tidak ada page
         </Button>
       </Box>

@@ -19,22 +19,23 @@ root.render(
       <CssBaseline />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={
-          <ProtectedComponent>
-            <App />
-          </ProtectedComponent>
-          } />
+          <Route
+            path="/"
+            element={
+              <ProtectedComponent>
+                <App />
+              </ProtectedComponent>
+            }
+          />
           <Route path="register" element={<Register />} />
           <Route path="moviedetailpage" element={<MovieDetailPage />} />
           <Route path="login" element={<Login />} />
-          <Route path="*" element= {<NotFound404 />}/>
+          <Route path="*" element={<NotFound404 />} />
           <Route
             path="/movie/:movieId"
             element={
               <ProtectedComponent>
-                <Layout>
-                  <MovieDetailPage />
-                </Layout>
+                <MovieDetailPage />
               </ProtectedComponent>
             }
           />
