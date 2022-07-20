@@ -8,7 +8,7 @@ const Footer = () => {
       <Container sx={{ py: 4 }}>
         <Stack>
           <Box>
-            <Grid container spacing={4}>
+            <Grid container>
               <Grid item xs={6} md={3}>
                 <Stack>
                   <Typography variant="body">Audio and Subtitles</Typography>

@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
+import Layout from "./components/Layout";
 import ProtectedComponent from "./components/ProtectedComponent";
 import Login from "./containers/Login";
 import MovieDetailPage from "./containers/MovieDetailPage";
@@ -27,6 +28,16 @@ root.render(
           <Route path="moviedetailpage" element={<MovieDetailPage />} />
           <Route path="login" element={<Login />} />
           <Route path="*" element= {<NotFound404 />}/>
+          <Route
+            path="/movie/:movieId"
+            element={
+            
+                <Layout>
+                  <MovieDetailPage />
+                </Layout>
+            
+            }
+          />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

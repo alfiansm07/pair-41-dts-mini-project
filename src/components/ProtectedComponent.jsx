@@ -4,15 +4,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../config/firebase";
 import { CircularProgress } from "@mui/material";
 import { Box } from "@mui/system";
+import Logout from "./Logout";
 const ProtectedComponent = ({ children }) => {
-  const navigate = useNavigate();
   const [user, isLoading] = useAuthState(auth);
-  useEffect(() => {
-    if (!user) {
-      navigate("/login");
-      return;
-    }
-  }, [user, navigate]);
 
   if (isLoading) {
     return (
@@ -28,9 +22,11 @@ const ProtectedComponent = ({ children }) => {
         <CircularProgress color="primary" />
       </Box>
     );
-  } else {
+  }
+  if (user) {
     return children;
   }
+  return <Logout />;
 };
 
 export default ProtectedComponent;

@@ -68,5 +68,5 @@ const signInReq = async (email, password) => {
     alert("LOGIN GAGAL")
   }
 };
-
+export const baseUrlForMovie = "https://image.tmdb.org/t/p";
 export { auth, signUpreq, signOutReq ,signInReq};

@@ -9,15 +9,15 @@ const base = createTheme({
     secondary: {
       main: "#FFFFFF",
     },
-    // tertiary: {
-    //   main: "#ffffff4d",
-    // },
+    tertiary: {
+      main: "#ffffff4d",
+    },
     error: {
       main: red[400],
     },
     text: {
       primary: "#FFFFFF",
-      secondary: "",
+      secondary: "#141414",
       disabled: "#ffffff33",
     },
     divider: "#FFFFFF",

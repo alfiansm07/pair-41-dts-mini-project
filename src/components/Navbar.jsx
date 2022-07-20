@@ -48,7 +48,7 @@ const Navbar = () => {
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
           <Avatar
             onClick={() => {
-              navigate("/login");
+              navigate("/");
             }}
             variant="square"
             alt="Profile"
