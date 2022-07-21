@@ -146,7 +146,7 @@ const MovieDetailPage = () => {
         </Box>
       )}
       <Container>
-        <Grid>
+        <Grid my="50px">
           <ListMovie
             typeList="recommendations"
             url={`/movie/${movieId}/recommendations?language=en-US&page=1`}

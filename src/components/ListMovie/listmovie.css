@@ -1,0 +1,15 @@
+.swiper-container {
+    width: 480px;
+  }
+  
+  @media screen and (min-width: 370px) {
+    .swiper-container {
+      width: 370px;
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+    .swiper-container {
+      width: 900px;
+    }
+  }

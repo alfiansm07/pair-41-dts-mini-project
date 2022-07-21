@@ -1,16 +1,16 @@
+import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import Client from "../../apis/Client";
 import ItemMovie from "./ItemMovie";
-import Typography from "@mui/material/Typography";
 
-import { Navigation, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Link } from "react-router-dom";
+import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "./listmovie.css";
 const ListMovie = ({ typeList, url }) => {
   const baseUrlForMovie = "https://image.tmdb.org/t/p/w500";
   const [movieList, setMovieList] = useState([]);
@@ -34,22 +34,31 @@ const ListMovie = ({ typeList, url }) => {
   return (
     <>
       <Container>
-        <Typography variant="h4">{typeList}</Typography>
+        <Typography mb="20px" variant="h4">
+          {typeList}
+        </Typography>
 
         <Swiper
-          modules={[Navigation, Pagination]}
-          spaceBetween={20}
-          slidesPerView={5}
-          navigation
-          pagination={{ clickable: true }}
-          style={{
-            "--swiper-pagination-color": "#fff",
-            "--swiper-pagination-bullet-inactive-color": "#aeaeae",
-            "--swiper-pagination-bullet-inactive-opacity": "1",
+          breakpoints={{
+            // when window width is >= 640px
+            370: {
+              width: 370,
+              slidesPerView: 2,
+            },
+            // when window width is >= 768px
+            900: {
+              width: 900,
+              slidesPerView: 4,
+            },
           }}
+          modules={[Navigation]}
+          spaceBetween={8}
+          slidesPerView={4}
+          navigation
+          // pagination={{ clickable: true }}
         >
           {movieList.map((movieList) => {
-            const { backdrop_path, poster_path, id, title } = movieList;
+            const { poster_path, id, title } = movieList;
             return (
               <SwiperSlide key={id}>
                 <ItemMovie
