@@ -8,7 +8,7 @@ export default function ItemMovie({ url, movieId, title }) {
   const navigate = useNavigate();
   const handleOnClickCard = () => {
     console.log("ini movie id", movieId);
-    navigate(`../movie/${movieId}`);
+    navigate(`/movie/${movieId}`, { replace: true });
   };
   return (
     <Card sx={{ minWidth: "150px", maxHeight: "300px" }}>
