@@ -34,9 +34,7 @@ const signUpreq = async (email, password) => {
     console.log("sukses REGISTER ", userCredential.user);
   } catch (err) {
     console.log("error messagesss", err.code, err.message);
-    <Alert variant="filled" severity="warning">
-        This is a warning alert — check it out!
-      </Alert>
+  
   }
 };
 
@@ -47,7 +45,9 @@ const signOutReq = async () => {
   } catch (err) {
     console.log(err);
     console.log("gagal log out");
+    return err
   }
+  
 };
 const signInReq = async (email, password) => {
   try {
@@ -59,13 +59,14 @@ const signInReq = async (email, password) => {
     alert("oke berhasil")
     
     
-
+    return userCredential.user
     console.log("User yang berhasil login adalah", userCredential.user);
   } catch (err) {
     console.log(err);
     console.log("error code auth", err.code);
     console.log("error message auth", err.message);
     alert("LOGIN GAGAL")
+    return err 
   }
 };
 export const baseUrlForMovie = "https://image.tmdb.org/t/p";
