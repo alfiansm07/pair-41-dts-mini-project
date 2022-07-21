@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Client from "../apis/Client";
 import Layout from "../components/Layout";
+import ItemMovie from "../components/ListMovie/ItemMovie";
+import ListMovie from "../components/ListMovie/ListMovie";
 import Loading from "../components/Loading";
 import { baseUrlForMovie } from "../config/firebase";
 const MovieDetailPage = () => {
@@ -143,6 +145,22 @@ const MovieDetailPage = () => {
           </Container>
         </Box>
       )}
+      <Container>
+        <Grid>
+          <ListMovie
+            typeList="recommendations"
+            url={`/movie/${movieId}/recommendations?language=en-US&page=1`}
+          />
+          <ItemMovie />
+        </Grid>
+        <Grid>
+          <ListMovie
+            typeList="Popular"
+            url="/movie/popular?language=en-US&page=1"
+          />
+          <ItemMovie />
+        </Grid>
+      </Container>
     </Layout>
   );
 };

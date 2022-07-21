@@ -24,15 +24,6 @@ const Home = () => {
           Button Jika tidak ada page
         </Button>
       </Box>
-
-      <Container>
-        <Box>
-          <ListMovie
-            typeList="Popular"
-            url="/movie/popular?language=en-US&page=1"
-          />
-        </Box>
-      </Container>
     </>
   );
 };
