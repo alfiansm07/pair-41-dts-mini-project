@@ -16,10 +16,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [errorHandling, setErrorHandling] = useState(false);
   const handleSubmit = (event) => {
-<<<<<<< HEAD
-=======
     event.preventDefault();
->>>>>>> 4f313027bdeb907fb0434f1670c168c80ad14fd8
     signInReq(email, password);
   };
   useEffect(() => {
