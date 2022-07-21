@@ -1,4 +1,5 @@
 // Import the functions you need from the SDKs you need
+import { Alert } from "@mui/material";
 import { initializeApp } from "firebase/app";
 import {
   createUserWithEmailAndPassword,
@@ -33,6 +34,7 @@ const signUpreq = async (email, password) => {
     console.log("sukses REGISTER ", userCredential.user);
   } catch (err) {
     console.log("error messagesss", err.code, err.message);
+  
   }
 };
 
@@ -43,7 +45,9 @@ const signOutReq = async () => {
   } catch (err) {
     console.log(err);
     console.log("gagal log out");
+    return err
   }
+  
 };
 const signInReq = async (email, password) => {
   try {
@@ -52,13 +56,23 @@ const signInReq = async (email, password) => {
       email,
       password
     );
-
+    alert("oke berhasil")
+    
+    
+    return userCredential.user
     console.log("User yang berhasil login adalah", userCredential.user);
   } catch (err) {
     console.log(err);
     console.log("error code auth", err.code);
     console.log("error message auth", err.message);
+    alert("LOGIN GAGAL")
+    return err 
   }
 };
+<<<<<<< HEAD
 
 export { auth, signUpreq, signOutReq, signInReq };
+=======
+export const baseUrlForMovie = "https://image.tmdb.org/t/p";
+export { auth, signUpreq, signOutReq ,signInReq};
+>>>>>>> 4f313027bdeb907fb0434f1670c168c80ad14fd8
