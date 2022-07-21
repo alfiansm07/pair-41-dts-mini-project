@@ -2,6 +2,8 @@ import React from "react";
 import Button from "@mui/material/Button";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Box } from "@mui/system";
+import { Container } from "@mui/material";
+import ListMovie from "../components/ListMovie/ListMovie";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -22,6 +24,15 @@ const Home = () => {
           Button Jika tidak ada page
         </Button>
       </Box>
+
+      <Container>
+        <Box>
+          <ListMovie
+            typeList="Popular"
+            url="/movie/popular?language=en-US&page=1"
+          />
+        </Box>
+      </Container>
     </>
   );
 };
